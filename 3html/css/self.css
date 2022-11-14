@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: url("../img/01bb62571600ba32f8758c9b79b318.jpg@2o.jpg") no-repeat;
+    background-color: rgba(48, 140, 201, .5);
+}
+
+/*html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url(../img/01bb62571600ba32f8758c9b79b318.jpg@2o.jpg) no-repeat 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}*/
+.nav {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(48, 140, 201, .5);
+}
+
+.boxs0 {
+    float: left;
+    margin-left: 200px;
+    margin-top: 10px;
+    width: 1.5%;
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.partition0 {
+    margin-left: 20px;
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+.txt {
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 25px;
+}
+
+img {
+    vertical-align: bottom;
+    width: 100%;
+    height: 100%;
+}
+
+.boxs1 {
+    float: right;
+    width: 8%;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 200px;
+    cursor: pointer;
+}
+
+.boxs2 {
+    float: right;
+    width: 8%;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.boxs3 {
+    float: right;
+    width: 8%;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.boxs4 {
+    float: right;
+    width: 8%;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.mainBox {
+    width: 60%;
+    margin: 0 auto;
+    height: 1700px;
+}
+.imgs1 {
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    left: 20%;
+    top: 300px;
+}
+
+.right {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    left: 77.8%;
+    top: 300px;
+}
+
+.left:hover,
+.right:hover {
+    cursor: pointer;
+}
+
+.timeImgs{
+    width: 100%;
+}
+.box1{
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    height: 25%;
+}
+.box11{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .5);
+}
+.box111{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 30%;
+    height: 30%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.box112{
+    position: absolute;
+    top: 30px;
+    right: 80px;
+}
+.box113{
+    position: absolute;
+    top: 200px;
+    left: 110px;
+}
+.box12{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 58%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .5);
+}
+.box12 .box121{
+    font-size: 30px;
+}
+.box122{
+    margin-top: 50px;
+}
+.box2{
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 25%;
+    position: relative;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .5);
+}
+.partion{
+    width: 100%;
+    height: 50px;
+}

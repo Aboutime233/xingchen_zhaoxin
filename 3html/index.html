@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="./css/login.css" rel="stylesheet">
+    <script src="./js/jq,mini - 副本.js"></script>
+</head>
+
+<body>
+    <div id="loginDiv" style="height: 350px">
+        <form action="" id="form">
+            <h1 id="loginMsg">登 录</h1>
+            <p>用户:<input id="username" name="username" type="text"></p>
+            <p>密码:<input id="password" name="password" type="password"></p>
+            <p>记住我:<input id="remember" name="remember" type="checkbox"></p>
+            <div id="subDiv">
+                <input type="button" class="button" value="登 陆" id="login">
+                <input type="reset" class="button" value="重 置">&nbsp;&nbsp;&nbsp;
+                <a href="register.html">没有账号？</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        $('#login').click(function(){
+            //先获取一下账号密码
+            var userName = $('#username').val();
+            var password = $('#password').val();
+            let user = {
+                username : userName,
+                password : password
+            }
+            var flag = true;
+            //与本地数据进行比对
+            var local = getData();
+            for(var i=0;i<local.length;i++){
+                if(comparison(user,local[i])){
+                    flag = false;
+                }
+            }
+            if(flag){
+                //用户名密码不对
+                alert("用户名密码不对");
+                return;
+            }else{
+                alert("登陆成功");
+            }
+            //这里开始转入自我介绍页面
+            window.location.href = "selfIntroduction.html";
+
+        });
+        //此函数用于获取本地数据
+        function getData() {
+            var data = localStorage.getItem('user');
+            if (data != null) {
+                return JSON.parse(data);
+            } else {
+                return [];
+            }
+        }
+        function comparison(obj1,obj2){
+            if(obj1.username == obj2.username&&obj1.password == obj2.password){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

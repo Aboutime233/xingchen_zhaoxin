@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background: url("./img/01bb62571600ba32f8758c9b79b318.jpg@2o.jpg") no-repeat;
+        }
+
+        .box {
+            overflow: hidden;
+            margin: 100px auto;
+            width: 503px;
+            height: 503px;
+            border: 1px solid white;
+        }
+
+        /*边界设置*/
+        .s-box {
+            float: left;
+            width: 167px;
+            height: 167px;
+            cursor: pointer;
+        }
+
+        .box1 {
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+
+        .box2 {
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+
+        .box3 {
+            border-bottom: 1px solid white;
+        }
+
+        .box4 {
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+
+        .box5 {
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+
+        .box6 {
+            border-bottom: 1px solid white;
+        }
+
+        .box7 {
+            border-right: 1px solid white;
+        }
+
+        .box8 {
+            border-right: 1px solid white;
+        }
+
+        img {
+            vertical-align: bottom;
+            width: 100%;
+            height: 100%;
+        }
+
+        .s-box img {
+            display: none;
+        }
+    </style>
+    <script src="./js/jq,mini - 副本.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <!--先做九个小盒子-->
+    <div class="box">
+        <div class="s-box box1" data-index="1">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box2" data-index="2">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box3" data-index="3">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box4" data-index="4">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box5" data-index="5">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box6" data-index="6">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box7" data-index="7">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box8" data-index="8">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+        <div class="s-box box9" data-index="9">
+            <img src="./img/right.png" alt="">
+            <img src="./img/wrong.png" alt="">
+        </div>
+    </div>
+    <script>
+        $(function () {
+            /*$('.s-box').mouseenter(function(){
+            $(this).animate({
+                boxShadow : "5px 5px rgba(255, 255, 255, .5)"
+            },'slow')
+            alert(1);
+        })*/
+            /*$('.s-box').click(function(){
+                $(this).children().show();
+            })*/
+            /*$(".box").mouseenter(function(){$('.box').animate({
+                    boxShadow: '5px 5px rgba(255, 255, 255, .5)'
+                },"slow");}).mouseleave(function(){$('.box').animate({
+                    boxShadow: 'none'
+                },"slow");});*/
+            var flag = 0;
+            /*flag为0时是√，flag为1时是X*/
+            $('.s-box').click(function () {
+                var index = $(this).attr('data-index');
+                if(!check(index)){
+                    alert("有位子啦")
+                    return;
+                }
+                var indexs = index - 1;
+                //改占位
+                var c = indexs % 3;
+                var r = (indexs - c) / 3;
+                isOwn[r][c] = flag;
+                $(this).children().eq(flag).show();
+                //判赢
+                if(isWin(index)){
+                    alert('你赢了');
+                    location.reload();
+                    return;
+                }
+                if(flag == 0){
+                    flag = 1;
+                }else{
+                    flag = 0;
+                }
+            })
+            //0时是√，flag为1时是X，2允许被占
+            var isOwn = [
+                [2, 2, 2],
+                [2, 2, 2],
+                [2, 2, 2]
+            ];
+            //这个数组用于判定胜利位置
+            var winPiece = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ]
+            function check(index) {
+                //该函数用于检测当前位置是否已经被占用
+                index = index - 1;
+                var c = index % 3;
+                var r = (index - c) / 3;
+                if (isOwn[r][c] == 2) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            //该函数用于判定是否胜利
+            //一定是点击方，且包含点击的地方有胜利的可能性，所以只返回胜利或失败
+            function isWin(index) {
+                //index为点击的地方
+                //依据flag判取是否胜利,先以0为模板
+                index = index - 1;
+                var array = new Array();
+                for (var i = 0; i < winPiece.length; i++) {
+                    if (winPiece[i].includes(index)) {
+                        array.push(i);
+                    }
+                }
+                var rt = true;
+                //现在我们获取了可能的赢的队列,遍历队列对应图像点得出标志
+                for (var i = 0; i < array.length; i++) {
+                    rt = true;
+                    for (var j = 0; j < 3&&rt!=false; j++) {
+                        var index1 = winPiece[array[i]][j];
+                        //获取赢单元格,及其行列地址
+                        var c = index1 % 3;
+                        var r = (index1 - c) / 3;
+                        if (isOwn[r][c]!=flag){
+                            rt = false;
+                        }
+                    }
+                    if(rt == true) break;
+                }
+                return rt;
+            }
+        })
+    </script>
+</body>
+
+</html>

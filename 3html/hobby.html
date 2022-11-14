@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>爱好页面</title>
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,600|Open+Sans:300,600" rel="stylesheet">
+	<link rel="stylesheet" href="./dist/sortable.min.css">
+	<script type="text/javascript" src="./dist/sortable.min.js"></script>
+	<link href="./css/self.css" rel="stylesheet">
+	<script src="./js/jq,mini - 副本.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/self.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	
+	<div class="nav">
+        <!--导航栏 预计设计四个页面-->
+        <div class="boxs0">
+            <img src="./img/m4.jpg" alt="">
+        </div>
+        <div class="partition0 txt"> 兴趣爱好</div>
+        <div class="boxs1 txt">兴趣爱好</div>
+        <div class="boxs2 txt">情感经历</div>
+        <div class="boxs3 txt">学习过程</div>
+        <div class="boxs4 txt">主页</div>
+    </div>
+	<div class="partion"></div>
+	<div class="htmleaf-container">
+		<main class="sortable">
+			<div class="container">
+				<div class="wrapper">
+					<div id="sortable" class="sjs-default">
+						<div data-sjsel="flatty">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (4).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">骑马与砍杀</h2>
+									<p class="card__text">
+										经营与战争的中世纪战争游戏是我的最爱
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="flatty">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (3).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">深海迷航</h2>
+									<p class="card__text">
+										个人生存探索类游戏也是我的最爱<br>
+										该类型游戏，我还玩过我的世界，森林，洛克王国，欢乐斗地主等等
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="funny">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (6).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">火锅</h2>
+									<p class="card__text">
+										巴蜀大将，小龙坎，红袍世家，不介意鸳鸯锅
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="flatty">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (7).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">乒乓球</h2>
+									<p class="card__text">
+										技术很菜，又很爱玩，真不是凡尔赛
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="flatty">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (8).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">跑步</h2>
+									<p class="card__text">
+										跑步是为了减肥，不是为了锻炼哈
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="funny">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (9).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">旅行</h2>
+									<p class="card__text">
+										照片不是我拍的，因为我的钱包不足以支持我走那么远
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="flatty">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (10).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">冰咖啡</h2>
+									<p class="card__text">
+										纯粹是因为好喝，苦苦的不要
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="flatty">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (11).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">无糖可乐</h2>
+									<p class="card__text">
+										可乐骨灰级爱好者，应该我的血液里流淌着可乐
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="funny">
+							<div class="card">
+								<img class="card__picture" src="./img/OIP-C (12).jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">熬夜</h2>
+									<p class="card__text">
+										患上了熬夜瘾
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script type="text/javascript">
+		document.querySelector('#sortable').sortablejs()
+		<script>
+        $(".boxs4").click(function () {
+            window.location.href = "selfIntroduction.html";
+        })
+        $(".boxs3").click(function () {
+            window.location.href = "study.html";
+        })
+        $(".boxs2").click(function () {
+            window.location.href = "myEmo.html";
+        })
+        $(".boxs1").click(function () {
+            window.location.href = "hobby.html";
+        })
+    </script>
+	</script>
+</body>
+
+</html>

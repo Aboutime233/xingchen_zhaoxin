@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎注册</title>
+    <link href="css/register.css" rel="stylesheet">
+    <script src="./js/jq,mini - 副本.js"></script>
+</head>
+<body>
+
+<div class="form-div">
+    <div class="reg-content">
+        <h1>欢迎注册</h1>
+        <span>已有帐号？</span> <a href="index.html">登录</a>
+    </div>
+    <form id="reg-form" action="#" method="get">
+
+        <table>
+
+            <tr>
+                <td>用户名</td>
+                <td class="inputs">
+                    <input name="username" type="text" id="username">
+                    <br>
+                    <span id="username_err" class="err_msg" style="display: none">用户名已存在</span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>密码</td>
+                <td class="inputs">
+                    <input name="password" type="password" id="password">
+                    <br>
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="buttons">
+            <input value="注 册" type="button" id="reg_btn">
+            <input value="真 注 册" type="submit" id="reg-sum" style="display: none"><!--这里因为没有向服务器去提交请求，所以就隐藏不写了-->
+        </div>
+        <br class="clear">
+    </form>
+    <script>
+        $('#reg_btn').click(function(){
+            var userName = $('#username').val();
+            var password = $('#password').val();
+            let user = {
+                username : userName,
+                password : password
+            }
+            var local = getData();
+            var flag = false;
+            for(var i=0;i<local.length;i++){
+                if(comparison(user,local[i])){
+                    flag = true;
+                }
+            }
+            if(flag){
+                //这是用户名它存在了
+                $("#username_err").show();
+                return;
+            }
+            //用户名不存在可以创建用户了
+            local.push(user);
+            saveData(local);
+            $('#username').val("");
+            $('#password').val("");
+        })
+        function getData() {
+            var data = localStorage.getItem('user');
+            if (data != null) {
+                return JSON.parse(data);
+            } else {
+                return [];
+            }
+        }
+        function comparison(obj1,obj2){
+            if(obj1.username == obj2.username){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //用于保存信息
+        function saveData(data) {
+            localStorage.setItem('user', JSON.stringify(data));
+        }
+    </script>
+</div>
+</body>
+</html>

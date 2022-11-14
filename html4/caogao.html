@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="./js/jq,mini - 副本.js"></script>
+		<script>
+			$(document).ready(
+		function(){
+			$(".one").mouseenter(function(){$(".two").animate({
+				width:'300px'
+			},"slow");}).mouseleave(function(){$(".two").animate({
+				width:'0'
+			},"slow");});			
+		}
+		);
+		</script>
+		<style type="text/css">
+			.two {
+				width: 0;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				z-index: 1;
+				opacity: 0.3;
+			}
+ 
+			.one {
+				opacity: 0.3;
+				width: 300px;
+				height: 100px;
+				position: absolute;
+				z-index: 2;
+				word-wrap: break-word;
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！你好啊！</div>
+		<div class="two"></div>
+	</body>
+</html>
